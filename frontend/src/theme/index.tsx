@@ -19,7 +19,10 @@ declare module '@mui/material/styles' {
       BACKGROUND: string
       PROGRESS_BAR: string
       CANCEL: string
+      CANCEL_BG: string
       BLUR_TEXT_HIGH: string
+      LIGHTISH_DARK_BACKGROUND: string
+      BLUE_TEXT_HIGH: string
     }
     darkTheme: {
       STRUCTURAL_100: string
@@ -37,6 +40,11 @@ declare module '@mui/material/styles' {
       STROKE_400: string
       STROKE_300: string
       CHIP: string
+      SURFACE_EMPHASIS: string
+      SOCIAL_CARD_BG: string
+      DARK_GREEN: string
+      STOKE_EMPHASIS: string
+      BACK_EMPHASIS: string
     }
   }
 
@@ -52,7 +60,10 @@ declare module '@mui/material/styles' {
       BACKGROUND: string
       PROGRESS_BAR: string
       CANCEL: string
+      CANCEL_BG: string
       BLUR_TEXT_HIGH: string
+      LIGHTISH_DARK_BACKGROUND: string
+      BLUE_TEXT_HIGH: string
     }
     darkTheme: {
       STRUCTURAL_100: string
@@ -70,6 +81,9 @@ declare module '@mui/material/styles' {
       STROKE_400: string
       STROKE_300: string
       CHIP: string
+      SURFACE_EMPHASIS: string
+      STOKE_EMPHASIS: string
+      BACK_EMPHASIS: string
     }
   }
 
@@ -153,7 +167,10 @@ const theme = createTheme({
       BACKGROUND: PALETTE.AMPSEC_BACKGROUND,
       PROGRESS_BAR: PALETTE.AMPSEC_PROGRESS_BAR,
       CANCEL: PALETTE.AMPSEC_CANCEL,
+      CANCEL_BG: PALETTE.AMPSEC_CANCEL_BG,
       BLUR_TEXT_HIGH: PALETTE.AMPSEC_BLUR_TEXT_HIGH,
+      LIGHTISH_DARK_BACKGROUND: PALETTE.DARK_BACKGROUND,
+      BLUE_TEXT_HIGH: PALETTE.AMPSEC_TEXT_HIGH,
     },
     darkTheme: {
       STRUCTURAL_100: PALETTE.DARK_THEME_STRUCTURAL_100,
@@ -171,6 +188,9 @@ const theme = createTheme({
       STROKE_400: PALETTE.DARK_THEME_STROKE_400,
       STROKE_300: PALETTE.DARK_THEME_STROKE_300,
       CHIP: PALETTE.DARK_THEME_CHIP,
+      SURFACE_EMPHASIS: PALETTE.HIGH_SURFACE_EMPHASIS,
+      STOKE_EMPHASIS: PALETTE.STOKE_SURFACE_EMPHASIS,
+      BACK_EMPHASIS: PALETTE.BACK_SURFACE_EMPHASIS,
     },
     text: {
       lowEmphasis: PALETTE.AMPSEC_TEXT_LOW,
