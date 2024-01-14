@@ -139,3 +139,4 @@ export const NOT_PROTECTED = 'NOT PROTECTED'
 export const FAILED_PHISHING = 'FAILED PHISHING'
 export const OVERDUE_TRAINING = 'OVERDUE TRAINING'
 export const ACTIVE = '6 Active'
+export const MONTH = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun']
