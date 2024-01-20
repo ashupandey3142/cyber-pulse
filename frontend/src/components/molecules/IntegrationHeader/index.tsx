@@ -1,12 +1,10 @@
-import React from 'react'
-import { Box } from '@mui/material'
-import styled from '@emotion/styled'
 import Button from '@/components/atoms/Button'
+import Icon from '@/components/atoms/Icon'
 import Typography from '@/components/atoms/Typography'
 import theme from '@/theme'
 import AddIcon from '@Assets/icons/Add.svg'
-import Icon from '@/components/atoms/Icon'
-import { NO_OPTION } from '@/utils/constant'
+import styled from '@emotion/styled'
+import { Box } from '@mui/material'
 
 interface IntegrationHeaderProps {
   label: string
@@ -34,7 +32,7 @@ const IntegrationHeader = ({
         label={label}
         color={theme.palette.darkTheme.HIGH_EMPHASIS}
       />
-      {hasButtonLabel ? (
+      {hasButtonLabel && (
         <Button
           typographyVariant="button"
           variant="outlined"
@@ -43,8 +41,6 @@ const IntegrationHeader = ({
           textColor={theme.palette.primary.main}
           sx={{ borderRadius: '0.25rem' }}
         />
-      ) : (
-        <Typography typographyVariant="body2" label={NO_OPTION} />
       )}
     </Container>
   )

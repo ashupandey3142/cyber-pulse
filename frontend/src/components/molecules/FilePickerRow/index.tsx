@@ -4,7 +4,6 @@ import theme from '@/theme'
 import { UPLOAD_CSV } from '@/utils/constant'
 import styled from '@emotion/styled'
 import { Box, Stack } from '@mui/material'
-import React from 'react'
 
 interface FilePickerCardProps {
   fileName: string
@@ -15,7 +14,6 @@ const Container = styled(Box)({
   height: '4.625rem',
   borderRadius: '0.5rem',
   backgroundColor: theme.palette.ampsec.LIGHTISH_DARK_BACKGROUND,
-  width: '100%',
   alignItems: 'center',
   gap: '0.9375rem',
   paddingLeft: '1.25rem',

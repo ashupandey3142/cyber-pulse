@@ -1,6 +1,6 @@
+import { GOOGLE_SIGN_IN, STATUS } from '@/utils/constant'
 import { fireEvent, render } from '@testing-library/react'
 import DisableSocialCard from '.'
-import { GOOGLE_SIGN_IN, STATUS } from '@/utils/constant'
 
 describe('DisableSocialCard', () => {
   it('should render with active status', () => {
@@ -15,7 +15,7 @@ describe('DisableSocialCard', () => {
 
     expect(getByText(GOOGLE_SIGN_IN)).toBeInTheDocument()
     expect(getByText(STATUS)).toBeInTheDocument()
-    expect(getByText('Active')).toBeInTheDocument()
+    expect(getByText('ENABLE')).toBeInTheDocument()
   })
 
   it('should render with disabled status', () => {
@@ -30,7 +30,7 @@ describe('DisableSocialCard', () => {
 
     expect(getByText(GOOGLE_SIGN_IN)).toBeInTheDocument()
     expect(getByText(STATUS)).toBeInTheDocument()
-    expect(getByText('Disable')).toBeInTheDocument()
+    expect(getByText('DISABLE')).toBeInTheDocument()
   })
 
   it('should handle click event', () => {
@@ -45,7 +45,7 @@ describe('DisableSocialCard', () => {
       />
     )
 
-    fireEvent.click(getByText('Active'))
+    fireEvent.click(getByText('ENABLE'))
 
     expect(handleDisableClickMock).toHaveBeenCalledTimes(1)
   })

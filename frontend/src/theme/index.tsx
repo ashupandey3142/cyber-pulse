@@ -45,6 +45,11 @@ declare module '@mui/material/styles' {
       DARK_GREEN: string
       STOKE_EMPHASIS: string
       BACK_EMPHASIS: string
+      DIVIDER_EMPHASIS: string
+      STROKE_EMPHASIS: string
+      LIGHT_EMPHASIS: string
+      SCROLL_BAR: string
+      SCROLL_BAR_BG: string
     }
   }
 
@@ -84,6 +89,13 @@ declare module '@mui/material/styles' {
       SURFACE_EMPHASIS: string
       STOKE_EMPHASIS: string
       BACK_EMPHASIS: string
+      DIVIDER_EMPHASIS: string
+      STROKE_EMPHASIS: string
+      LIGHT_EMPHASIS: string
+      DARK_GREEN: string
+      SOCIAL_CARD_BG: string
+      SCROLL_BAR: string
+      SCROLL_BAR_BG: string
     }
   }
 
@@ -191,6 +203,14 @@ const theme = createTheme({
       SURFACE_EMPHASIS: PALETTE.HIGH_SURFACE_EMPHASIS,
       STOKE_EMPHASIS: PALETTE.STOKE_SURFACE_EMPHASIS,
       BACK_EMPHASIS: PALETTE.BACK_SURFACE_EMPHASIS,
+      DIVIDER_EMPHASIS: PALETTE.DIVIDER_EMPHASIS,
+      STROKE_EMPHASIS: PALETTE.DARK_THEME_SOCIAL_CARD_BG,
+      LIGHT_EMPHASIS: PALETTE.LIGHT_EMPHASIS,
+      DARK_GREEN: PALETTE.DARK_GREEN,
+      SOCIAL_CARD_BG: PALETTE.DARK_THEME_SOCIAL_CARD_BG,
+      SCROLL_BAR: PALETTE.SCROLL_BAR,
+      SCROLL_BAR_BG: PALETTE.SCROLL_BAR_BG,
+
     },
     text: {
       lowEmphasis: PALETTE.AMPSEC_TEXT_LOW,

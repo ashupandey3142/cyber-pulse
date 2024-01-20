@@ -6,7 +6,13 @@ import Typography from '@/components/atoms/Typography'
 import GenericModal from '@/components/molecules/GenericModal'
 import theme from '@/theme'
 import { COPYCISO, ENGAGE_TITLE, MEDIUM, SEND } from '@/utils/constant'
-import { MenuItem, Select, Stack, styled } from '@mui/material'
+import {
+  MenuItem,
+  Select,
+  SelectChangeEvent,
+  Stack,
+  styled,
+} from '@mui/material'
 import ArrowIcon from '@Assets/icons/DownCaretMedium.svg'
 
 interface IMenuItem {
@@ -21,7 +27,7 @@ interface IEngageModalBox {
   error?: boolean
   disableButton?: boolean
   helperText?: string
-  handleDropdownChange: () => void
+  handleDropdownChange: (e: SelectChangeEvent<unknown>) => void
   onModalCloseClick: () => void
   onSend: () => void
   onChange: (
@@ -46,11 +52,24 @@ const DropdownContainer = styled(Stack)({
 
 const FieldContainer = styled(TextField)({
   width: theme.spacing(143),
+
   '& .MuiInputBase-input': {
     fontSize: theme.spacing(3.75),
     fontWeight: 400,
+    overflowY: 'auto',
+    scrollbarWidth: 'thin',
+
+    '&::-webkit-scrollbar': {
+      width: theme.spacing(1.5),
+    },
+    '&::-webkit-scrollbar-thumb': {
+      border: `0.5px solid ${theme.palette.primary.main}`,
+      backgroundColor: theme.palette.darkTheme.DIVIDER_EMPHASIS,
+      borderRadius: 12,
+    },
   },
 })
+
 const BottomContainer = styled(Stack)({
   display: 'flex',
   flexDirection: 'row',

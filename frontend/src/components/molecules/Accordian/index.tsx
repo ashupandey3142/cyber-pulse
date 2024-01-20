@@ -16,6 +16,8 @@ interface AccordianCompProps {
   content?: React.ReactNode
   isConfigured: boolean
   configurationName: string
+  isOpen?: boolean
+  handleAccordionClick?: () => void
 }
 
 const Accordion = styled((props: AccordionProps) => (
@@ -47,7 +49,7 @@ const AccordionSummary = styled((props: AccordionSummaryProps) => (
 
 const AccordionDetails = styled(MuiAccordionDetails)({
   padding: theme.spacing(2),
-  background: theme.palette.darkTheme.BACK_EMPHASIS,
+  background: theme.palette.darkTheme.STOKE_EMPHASIS,
   paddingLeft: '3.4375rem',
   display: 'flex',
   height: 'inherit',
@@ -56,16 +58,19 @@ const AccordionDetails = styled(MuiAccordionDetails)({
 
 const AccordionSummaryContainer = styled(AccordionSummary)({
   background: theme.palette.darkTheme.BACK_EMPHASIS,
+  height: theme.spacing(17),
 })
 
 const AccordianComp = ({
   configurationName,
   isConfigured,
+  isOpen,
   content,
+  handleAccordionClick,
 }: AccordianCompProps) => {
   return (
     <div>
-      <Accordion>
+      <Accordion expanded={isOpen} onChange={handleAccordionClick}>
         <AccordionSummaryContainer
           aria-controls="panel1d-content"
           id="panel1d-header"

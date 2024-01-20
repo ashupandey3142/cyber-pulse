@@ -1,12 +1,27 @@
 import React from 'react'
 import { Line } from 'react-chartjs-2'
-import { TimeScale } from 'chart.js'
-import { Chart } from 'chart.js/auto'
+import {
+  Chart,
+  LineElement,
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  Legend,
+  Tooltip,
+} from 'chart.js'
+
 import ChartDataLabels from 'chartjs-plugin-datalabels'
 import { Stack } from '@mui/material'
 import { data, option } from '@/utils/function'
 
-Chart.register(TimeScale)
+Chart.register(
+  LineElement,
+  Legend,
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  Tooltip
+)
 
 interface IGraph {
   labels: string[]
@@ -18,13 +33,15 @@ interface IGraph {
 const Graph = ({ labels, graphValues, width, height }: IGraph) => {
   return (
     <Stack data-testid="line-graph" width={width} height={height}>
-      {labels.length > 0 && graphValues.length > 0 && (
-        <Line
-          data={data(labels, graphValues)}
-          plugins={[ChartDataLabels]}
-          options={option(labels)}
-        />
-      )}
+      {labels.length > 0 &&
+        graphValues.length > 0 &&
+        graphValues.length < labels.length + 1 && (
+          <Line
+            data={data(labels, graphValues)}
+            plugins={[ChartDataLabels]}
+            options={option(labels)}
+          />
+        )}
     </Stack>
   )
 }
