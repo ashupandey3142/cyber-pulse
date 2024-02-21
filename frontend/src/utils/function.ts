@@ -1,7 +1,7 @@
-import { ScriptableContext, ScriptableScaleContext } from 'chart.js'
-import { Chart } from 'chart.js/auto'
+import { Chart, ScriptableContext, ScriptableScaleContext } from 'chart.js'
 import theme from '@/theme'
 import { Context } from 'chartjs-plugin-datalabels'
+import { IRowData, ServerData } from './interfaces'
 
 export const data = (labels: string[], graphValues: number[]) => {
   return {
@@ -82,11 +82,12 @@ export const option = (labels: string[]) => {
         display: false,
       },
       datalabels: {
-        color: theme.palette.darkTheme.SOCIAL_CARD_BG,
+        color: theme.palette.darkTheme.STRUCTURAL_CARD_BG,
         font: {
-          size: 15,
+          size: 14,
           weight: 700,
           lineHeight: 20,
+          family: 'Barlow',
         },
         formatter: (value: number, context: Context) => {
           if (
@@ -100,4 +101,35 @@ export const option = (labels: string[]) => {
       },
     },
   }
+}
+
+export const transformIntoSecurityFindingData = (
+  data: ServerData
+): IRowData[] => {
+  const convertedData: IRowData[] = []
+
+  for (const key in data) {
+    const item = data[key]
+
+    const rowData: IRowData = {
+      id: key,
+      severity: item.Severity,
+      status: item.Status,
+      provider: item.Provider,
+      domain: item.Domain,
+      finding: item.Finding,
+      numberOfEngagement: item['Number of Engagements'],
+      name: item.Name,
+      department: item.Department,
+      createdAt: item['Joined On'],
+      description: item.Description,
+      mfaEnabled: item['MFA Enabled'] === 'True',
+      riskScore: item['Risk Score'],
+      groups: item.Groups,
+    }
+
+    convertedData.push(rowData)
+  }
+
+  return convertedData
 }

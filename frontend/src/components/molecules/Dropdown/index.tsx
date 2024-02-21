@@ -12,6 +12,7 @@ import Button from '@/components/atoms/Button'
 interface DropDownCardProps {
   cardData?: ActionProps[]
   selectedId: number
+  disabled?: boolean
   handleClick: (id: number) => void
 }
 
@@ -52,6 +53,7 @@ const HIGH_EMPHASIS_COLOR = theme.palette.darkTheme.SURFACE_EMPHASIS
 const DropDown: React.FC<DropDownCardProps> = ({
   cardData,
   selectedId,
+  disabled,
   handleClick,
 }: DropDownCardProps) => {
   const [engage, setEngage] = React.useState<HTMLButtonElement | null>(null)
@@ -71,6 +73,7 @@ const DropDown: React.FC<DropDownCardProps> = ({
         variant="contained"
         style={ButtonStyle}
         typographyVariant="button"
+        disabled={disabled}
         textColor={BLACK_COLOR}
         endIcon={<img src={ChevronDown} alt="chevron-down" />}
         onClick={handleOpen}

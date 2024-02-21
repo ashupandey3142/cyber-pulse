@@ -11,11 +11,9 @@ interface ImageWithTextProps {
 
 const Container = styled(Stack)({
   display: 'flex',
-  height: '10rem',
   borderRadius: '0.5rem',
-  width: '12.125rem',
   textAlign: 'center',
-  gap: '1.875rem',
+  gap: '2.5rem',
 })
 
 const ImageWithText = ({ fileName }: ImageWithTextProps) => {

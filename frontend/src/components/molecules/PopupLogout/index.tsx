@@ -23,7 +23,7 @@ const LogoutContainer = styled(Stack)({
   width: '16.25rem',
   border: `0.5px solid ${theme.palette.text.mediumEmphasis}`,
   borderRadius: '0.25rem',
-  background: theme.palette.darkTheme.SOCIAL_CARD_BG,
+  background: theme.palette.darkTheme.STRUCTURAL_CARD_BG,
   gap: '0.375rem',
   paddingTop: '0.9375rem',
   justifyContent: 'flex-start',
@@ -49,7 +49,7 @@ const PopupButton = styled(Button)({
 
 const MuiTypography = styled(Typography)({ paddingLeft: '13px' })
 const MuiBox = styled(Box)({
-  marginTop: '37.5rem',
+  marginTop: '387px',
 })
 
 const LogoutPopup: React.FC<LogoutProps> = ({
@@ -71,7 +71,7 @@ const LogoutPopup: React.FC<LogoutProps> = ({
         anchorEl={anchorElement}
         onClose={handleClose}
         anchorReference="anchorPosition"
-        anchorPosition={{ top: 520, left: 10 }}
+        anchorPosition={{ top: 790, left: 33 }}
         anchorOrigin={{
           vertical: 'center',
           horizontal: 'left',
@@ -81,7 +81,7 @@ const LogoutPopup: React.FC<LogoutProps> = ({
           horizontal: 'left',
         }}
       >
-        <LogoutContainer onClick={handleClose}>
+        <LogoutContainer>
           <MuiTypography
             label={userName}
             variant="body1"

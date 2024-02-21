@@ -5,7 +5,6 @@ import theme from '@/theme'
 import { CONFIGURE, IDENTITY } from '@/utils/constant'
 import styled from '@emotion/styled'
 import { Box, Stack } from '@mui/material'
-import React from 'react'
 
 interface ActiveToolCardProps {
   src: string
@@ -35,7 +34,7 @@ const InnerGrid = styled(Stack)({
   display: 'flex',
   padding: '2px',
   height: theme.spacing(57.1),
-  background: theme.palette.darkTheme.DARK_GREEN,
+  backgroundColor: theme.palette.darkTheme.DARK_GREEN,
   gap: '1.375rem',
   margin: '0.125rem',
   paddingTop: theme.spacing(2.5),

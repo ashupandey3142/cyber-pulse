@@ -1,11 +1,16 @@
 import Button from '@/components/atoms/Button'
 import Icon from '@/components/atoms/Icon'
 import Typography from '@/components/atoms/Typography'
+import theme from '@/theme'
+import {
+  LAST_UPDATE,
+  LAST_UPDATE_TIME,
+  STATUS,
+  UPDATE_TIME,
+} from '@/utils/constant'
+import VERTICALCIRCLE from '@Assets/icons/Vertical container.svg'
 import styled from '@emotion/styled'
 import { Box, Grid, Stack } from '@mui/material'
-import VERTICALCIRCLE from '@Assets/icons/Vertical container.svg'
-import { LAST_UPDATE, STATUS } from '@/utils/constant'
-import theme from '@/theme'
 
 interface DisableSocialCardProps {
   socialLabel: string
@@ -75,22 +80,34 @@ const DisableSocialCard = ({
               <Typography
                 label={STATUS}
                 color={theme.palette.darkTheme.MEDIUM_EMPHASIS}
-                variant="body2"
+                variant="body6"
               />
               <Icon src={VERTICALCIRCLE} alt="Vertical" />
             </IconBox>
-            <Typography
-              color={theme.palette.darkTheme.MEDIUM_EMPHASIS}
-              label={LAST_UPDATE}
-              variant="body1"
-            />
+            <Stack direction="row" gap={1}>
+              <Typography
+                color={theme.palette.darkTheme.MEDIUM_EMPHASIS}
+                label={LAST_UPDATE}
+                variant="body4"
+              />
+              <Typography
+                color={theme.palette.darkTheme.MEDIUM_EMPHASIS}
+                label={LAST_UPDATE_TIME}
+                variant="body3"
+              />
+              <Typography
+                color={theme.palette.darkTheme.MEDIUM_EMPHASIS}
+                label={UPDATE_TIME}
+                variant="body4"
+              />
+            </Stack>
           </InnerBox>
         </TypoBox>
       </GoogleBox>
       <DisableBox>
         <Button
           variant="outlined"
-          label={isActive ? 'Active' : 'Disable'}
+          label={isActive ? 'ENABLE' : 'DISABLE'}
           typographyVariant="button"
           textColor={theme.palette.primary.main}
           onClick={onToggleClick}

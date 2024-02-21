@@ -10,11 +10,12 @@ import theme from '@/theme'
 interface IFilterHeader {
   filedValue?: string
   selectedId: number
+  disabledButton?: boolean
   onChange: (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => void
   onDropDownClick: (id: number) => void
-  onFilterClick: () => void
+  onFilterClick: (e: React.MouseEvent<HTMLButtonElement>) => void
 }
 
 const MainWrapper = styled(Stack)({
@@ -72,6 +73,7 @@ const StyleIcon = styled(Icon)({
 const FilterHeader = ({
   filedValue,
   selectedId,
+  disabledButton,
   onChange,
   onDropDownClick,
   onFilterClick,
@@ -98,6 +100,7 @@ const FilterHeader = ({
       </FilterContainer>
       <DropDown
         cardData={ACTION_CARD_DATA}
+        disabled={disabledButton}
         selectedId={selectedId}
         handleClick={onDropDownClick}
       />
